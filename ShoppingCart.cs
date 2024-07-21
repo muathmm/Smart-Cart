@@ -15,14 +15,16 @@ namespace Smart_Cart
             items = new List<Product>();
         }
 
-        public void AddItem(Product product)
+        public Product  AddItem(Product product)
         {
             items.Add(product);
+
+            return product;
         }
 
-        public void RemoveItem(Product product)
-        {
-            items.Remove(product);
+        public bool RemoveItem(Product product)
+        {    if (items.Remove(product)) return true;
+            return false;
         }
 
         public List<Product> ViewItems()
